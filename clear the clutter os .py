@@ -14,18 +14,21 @@ os.chdir(r"D:\clear the clutter")
 
 print(os.getcwd())
 
-x = os.listdir(r"D:\clear the clutter")
+x = os.listdir(r"D:\clear the clutter") # list of files in clutter dir 
 
 
-for i in x:
+for i in x:  
  
- f = os.path.splitext(i)
- #print(f[1])
+ f = os.path.splitext(i) # split music.mp3 to ("music",".mp3")
+ 
 
- for ii in l.items():
-    for iii in ii[1]:
+ for ii in l.items(): # key[0] and values[1] 
+     
+    for iii in ii[1]: # in value list
       if f[1] == iii:
+
+        os.makedirs(ii[0], exist_ok = True) #
         print("true")
+
       
-      if f[1] == iii:
-        print("true")
+# everything is new in this project i'll rate this medium to hard difficulty

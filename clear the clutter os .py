@@ -1,4 +1,6 @@
 import os
+import shutil
+
 
 l = {
  "audio" : [".mp3", ".wav", ".m4a"],
@@ -27,8 +29,10 @@ for i in x:
     for iii in ii[1]: # in value list
       if f[1] == iii:
 
-        os.makedirs(ii[0], exist_ok = True) #
+        os.makedirs(ii[0], exist_ok = True) # exist_ok = True is for if file already existed dont throw error 
         print("true")
+
+        shutil.move(i,os.path.join(ii[0],i) )
 
       
 # everything is new in this project i'll rate this medium to hard difficulty

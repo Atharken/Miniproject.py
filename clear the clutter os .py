@@ -19,20 +19,29 @@ print(os.getcwd())
 x = os.listdir(r"D:\clear the clutter") # list of files in clutter dir 
 
 
+
 for i in x:  
- 
+ condition = False 
  f = os.path.splitext(i) # split music.mp3 to ("music",".mp3")
  
 
  for ii in l.items(): # key[0] and values[1] 
      
     for iii in ii[1]: # in value list
-      if f[1] == iii:
+      if f[1] == iii and os.path.isfile(i):
 
         os.makedirs(ii[0], exist_ok = True) # exist_ok = True is for if file already existed dont throw error 
         print("true")
 
-        shutil.move(i,os.path.join(ii[0],i) )
+        shutil.move(i,os.path.join(ii[0],i))
+        condition = True
+        break
+    if condition == True:
+      break    
+ if condition == False and os.path.isfile(i):
+  os.makedirs("mislenious", exist_ok=True)
+  shutil.move(i,os.path.join("mislenious",i))
+
 
       
-# everything is new in this project i'll rate this medium to hard difficulty
+# everything is new in this project i'll rate this hard difficulty for me
